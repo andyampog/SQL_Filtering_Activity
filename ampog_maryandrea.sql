@@ -51,38 +51,39 @@ INSERT INTO `Customers` (`customer_id`, `customer_name`, `city`, `membership_lev
 (9, 'Ian', 'Bohol', 'Gold', '2025-04-10'),
 (10, 'Julia', 'Cebu', 'Bronze', '2025-04-15');
 
-Q1:
-SELECT * FROM customers WHERE city = 'Cebu';
+--Q1:
+SELECT * FROM Customers WHERE city = 'Cebu';
 
--- Q2:
-SELECT * FROM customers WHERE membership_level = 'Gold';
+--Q2:
+SELECT * FROM Customers WHERE membership_level = 'Gold';
 
--- Q3:
-SELECT * FROM customers WHERE customer_name LIKE 'A%' OR customer_name LIKE 'D%';
+--Q3:
+SELECT * FROM Customers WHERE customer_name LIKE 'A%' OR customer_name LIKE 'D%';
 
--- Q4:
-SELECT * FROM customers WHERE city = 'Cebu' AND membership_level IN('Silver', 'Gold');
+--Q4:
+SELECT * FROM Customers WHERE city = 'Cebu' AND membership_level IN ('Silver', 'Gold');
 
--- Q5:
-SELECT * FROM customers WHERE join_date BETWEEN '2025-02-01' AND '2025-03-31';
+--Q5:
+SELECT * FROM Customers WHERE join_date BETWEEN '2025-02-01' AND '2025-03-31';
 
--- Q6:
-SELECT * FROM customers WHERE city IN('Bohol', 'Tagbilaran') AND membership_level = 'Bronze';
+--Q6:
+SELECT * FROM Customers WHERE city IN ('Bohol', 'Tagbilaran') AND membership_level = 'Bronze';
 
--- Q7:
-SELECT * FROM customers WHERE customer_name LIKE '%a%';
+--Q7:
+SELECT * FROM Customers WHERE customer_name LIKE '%a%' OR customer_name LIKE '%A%';
 
--- Q8:
-SELECT * FROM customers WHERE city = 'Cebu' AND membership_level = 'Gold' AND join_date < '2025-03-01';
+--Q8:
+SELECT * FROM Customers WHERE city = 'Cebu' AND membership_level = 'Gold' AND join_date < '2025-03-01';
 
--- Q9:
-SELECT * FROM customers WHERE city IN('Bohol', 'Tagbilaran') AND join_date <= '2025-02-28' AND membership_level IN('Silver', 'Bronze');
+--Q9:
+SELECT * FROM Customers WHERE city IN ('Bohol', 'Tagbilaran') AND join_date <= '2025-02-28' AND membership_level IN ('Silver', 'Bronze');
 
--- Q10:
-SELECT * FROM customers WHERE NOT customer_id IN(1, 4, 6) AND join_date > '2025-02-28';
+--Q10:
+SELECT * FROM Customers WHERE customer_id NOT IN (1, 4, 6) AND join_date > '2025-02-28';
 
--- Q11:
-SELECT * FROM customers WHERE join_date BETWEEN '2025-04-01' AND '2025-04-30' AND city IN('Cebu', 'Bohol') AND NOT membership_level = 'Bronze';
+--Q11:
+SELECT * FROM Customers WHERE (join_date BETWEEN '2025-04-01' AND '2025-04-30') AND city IN ('Cebu', 'Bohol') AND membership_level != 'Bronze';
+
 
 
 --
